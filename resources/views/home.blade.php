@@ -1,9 +1,9 @@
 @extends('layouts.base')
 
 @section('contents')
-    <div class="container">
+
       
-      <h2 class="text-center">I miei viaggi</h2>
+      {{-- <h2 class="text-center">I miei viaggi</h2> --}}
 
       <div id="carouselExampleIndicators" class="carousel slide">
         <div class="carousel-indicators">
@@ -28,5 +28,4 @@
         </button>
       </div>
 
-    </div>
 @endsection
