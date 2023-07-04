@@ -33,8 +33,8 @@
         @endforeach
     </div>
     {{ $travels->links() }}
-    <a href="{{ route('comics.create') }}" class="btn btn-primary mb-3">New</a>
-    <a href="{{ route('comics.trashed') }}" class="btn btn-primary mb-3">Bucket</a>
+    <a href="{{ route('travels.create') }}" class="btn btn-primary mb-3">New</a>
+    <a href="{{ route('travels.trashed') }}" class="btn btn-primary mb-3">Bucket</a>
 </div>
 
 @endsection

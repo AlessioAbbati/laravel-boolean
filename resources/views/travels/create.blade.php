@@ -46,5 +46,5 @@
 </div>
 
 <button type="submit">invia</button>
-</from>
+</form>
 @endsection
