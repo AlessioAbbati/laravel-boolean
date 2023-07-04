@@ -23,10 +23,10 @@ class TravelController extends Controller
      */
     public function index()
     {
-        $travel = Travel::all();
-        return view("travels.index", [
-            "travels" => $travel,
-        ]);
+        $travels = Travel::paginate(3); 
+
+
+        return view('travels.index', compact('travels'));
     }
 
     /**
