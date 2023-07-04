@@ -47,7 +47,20 @@ class TravelController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $request->validate($this->validations);
+
+        $data       = $request->all();
+        $newTravel  = new Travel();
+
+        $newTravel->date            = $data['date'];
+        $newTravel->title           = $data['title'];
+        $newTravel->text            = $data['text'];
+        $newTravel->image           = $data['image'];
+        $newTravel->country         = $data['country'];
+        $newTravel->city            = $data['city'];
+        $newTravel->save();
+
+        return redirect()->route('travels.index');
     }
 
     /**
@@ -106,5 +119,14 @@ class TravelController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function trashed()
+    {
+        $trashedTravels = Travel::onlyTrashed()->paginate(3); 
+
+        
+
+        return view('travels.trashed', compact('trashedTravels'));
     }
 }
