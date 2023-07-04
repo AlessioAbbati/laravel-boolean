@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Travel;
 use Illuminate\Http\Request;
 
 class TravelController extends Controller
@@ -13,7 +14,10 @@ class TravelController extends Controller
      */
     public function index()
     {
-        //
+        $travel = Travel::all();
+        return view("travels.index", [
+            "travels" => $travel,
+        ]);
     }
 
     /**
@@ -23,7 +27,7 @@ class TravelController extends Controller
      */
     public function create()
     {
-        //
+        return view("travels.create");
     }
 
     /**
@@ -34,7 +38,7 @@ class TravelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
