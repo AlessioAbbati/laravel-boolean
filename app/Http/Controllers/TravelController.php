@@ -86,12 +86,12 @@ class TravelController extends Controller
         $data = $request->all();
 
         // aggiornare i dati nel db
-        $comic->date            = $data["date"];
-        $comic->title           = $data["title"];
-        $comic->text            = $data["text"];
-        $comic->image           = $data["image"];
-        $comic->country         = $data["country"];
-        $comic->update();
+        $travel->date            = $data["date"];
+        $travel->title           = $data["title"];
+        $travel->text            = $data["text"];
+        $travel->image           = $data["image"];
+        $travel->country         = $data["country"];
+        $travel->update();
 
         // altro metodo per fare il redirect
         return to_route("travels.show", ["travel" => $travel->id]);
