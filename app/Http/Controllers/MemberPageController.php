@@ -36,7 +36,7 @@ class MemberPageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -47,7 +47,8 @@ class MemberPageController extends Controller
      */
     public function show(Member $member)
     {
-        //
+        
+        return view('members.showMembers', compact('member'));
     }
 
     /**

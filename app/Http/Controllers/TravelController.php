@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Member;
 use App\Models\Travel;
 use Illuminate\Http\Request;
 
@@ -73,7 +74,7 @@ class TravelController extends Controller
     {
         return view("travels.show", compact("travel"));
     }
-
+    
     /**
      * Show the form for editing the specified resource.
      *

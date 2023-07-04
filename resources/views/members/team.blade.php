@@ -1,3 +1,4 @@
-@foreach ($members as $member)
+{{-- @foreach ($members as $member)
     <div>{{ $member->nome }}</div>
-@endforeach
+    <a href="{{ route('members.show', ['member' => $member->id]) }}">ciao</a>
+@endforeach --}}

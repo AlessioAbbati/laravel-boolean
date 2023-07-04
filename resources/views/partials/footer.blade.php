@@ -28,12 +28,12 @@
                 <li class="list-unstyled">Weekend</li>
             </ul>
             <ul> TEAM
-                <li class=" mt-2 list-unstyled"> <a href="{{ route('members.index') }}" class="text-light text-decoration-none">Lamberto Neri</a></li>
-                <li class="list-unstyled"> <a href="" class="text-light text-decoration-none">Felice D'Arcangelo</a></li>
-                <li class="list-unstyled"> <a href="" class="text-light text-decoration-none">Alessio Abbati</a></li>
-                <li class="list-unstyled"> <a href="" class="text-light text-decoration-none">Giulio D'Angelo</a></li>
-                <li class="list-unstyled"> <a href="" class="text-light text-decoration-none">Nicola Soggiu</a></li>
-                <li class="list-unstyled"> <a href="" class="text-light text-decoration-none">Domenico Ferrari</a></li>
+                <li class=" mt-2 list-unstyled"> <a href="/members/2" class="text-light text-decoration-none">Lamberto Neri</a></li>
+                <li class="list-unstyled"> <a href="/members/3" class="text-light text-decoration-none">Felice D'Arcangelo</a></li>
+                <li class="list-unstyled"> <a href="/members/1" class="text-light text-decoration-none">Alessio Abbati</a></li>
+                <li class="list-unstyled"> <a href="/members/4" class="text-light text-decoration-none">Giulio D'Angelo</a></li>
+                <li class="list-unstyled"> <a href="/members/6" class="text-light text-decoration-none">Nicola Soggiu</a></li>
+                <li class="list-unstyled"> <a href="/members/5" class="text-light text-decoration-none">Domenico Ferrari</a></li>
             </ul>
         </div>
     </div>
