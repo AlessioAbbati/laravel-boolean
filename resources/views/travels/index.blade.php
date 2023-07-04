@@ -22,11 +22,11 @@
                     <div class="card-body">
                         <a href="{{ route('travels.show', ['travel' => $travel->id]) }}" class="btn btn-primary">Travel info</a>
                         <a href="{{ route('travels.edit', ['travel' => $travel->id]) }}" class="btn btn-warning">Edit travel</a>
-                        <form action="{{ route('travels.destroy', ['travel' => $travel->id]) }}" method="POST" class="d-inline-block">
+                        {{-- <form action="{{ route('travels.destroy', ['travel' => $travel->id]) }}" method="POST" class="d-inline-block">
                             @csrf
                             @method('delete')
                             <button class="btn btn-danger" href="">Delete</button>
-                        </form>
+                        </form> --}}
                     </div>
                 </div>
             </div>
