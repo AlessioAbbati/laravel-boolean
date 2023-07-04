@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('travels', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            // $table->timestamps();
 
             $table->date('date');           // Il ricordo testuale dell'Esperienza
             $table->string('title', 50);    // Il titolo dell'Esperienza
