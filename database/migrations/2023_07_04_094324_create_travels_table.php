@@ -21,9 +21,14 @@ return new class extends Migration
             $table->date('date');           // Il ricordo testuale dell'Esperienza
             $table->string('title', 50);    // Il titolo dell'Esperienza
             $table->text('text');           // Il ricordo testuale dell'Esperienza
+            $table->text('description'); 
             $table->text('image');          // Un'immagine associata all'Esperienza
-            $table->string('country', 25);   // La nazione in cui è avvenuta l'Esperienza
-            $table->string('city', 50);  // L'indirizzo presso cui è avvenuta l'Esperienza
+            $table->text('image_1');        
+            $table->text('image_2');        
+            $table->text('image_3');        
+            $table->text('image_4');        
+            $table->string('country', 25);  // La nazione in cui è avvenuta l'Esperienza
+            $table->string('city', 50);     // L'indirizzo presso cui è avvenuta l'Esperienza
         });
     }
 
