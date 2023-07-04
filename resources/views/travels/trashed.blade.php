@@ -3,6 +3,24 @@
 @section('contents')
 <h1>Your Trashed Travel</h1>
     
+@if (session('delete_success'))
+        @php
+            $travel = session('delete_success')
+        @endphp
+        <div class="alert alert-danger">
+            "{{ $travel->title }}" has been deleted!!
+        </div>
+    @endif
+
+    @if (session('restore_success'))
+    @php
+        $travel = session('restore_success')
+    @endphp
+    <div class="alert alert-success">
+        "{{ $travel->title }}" has been deleted!!
+        
+    </div>
+@endif
 
 <div class="container">
     <div class="row row-cols-3">
@@ -21,11 +39,15 @@
                     </ul>
                     <div class="card-body">
                         <a href="{{ route('travels.show', ['travel' => $travel->id]) }}" class="btn btn-primary">Travel info</a>
-                        {{-- <form action="{{ route('travels.destroy', ['travel' => $travel->id]) }}" method="POST" class="d-inline-block">
+                        <form action="{{ route('travels.restore', ['travel' => $travel->id]) }}" method="POST" class="d-inline-block">
+                            @csrf
+                            <button class="btn btn-warning" href="">Restored</button>
+                        </form>
+                        <form action="{{ route('travels.hardDelete', ['travel' => $travel->id]) }}" method="POST" class="d-inline-block">
                             @csrf
                             @method('delete')
-                            <button class="btn btn-danger" href="">Delete</button>
-                        </form> --}}
+                            <button class="btn btn-danger" href="">Hard Delete</button>
+                        </form>
                     </div>
                 </div>
             </div>

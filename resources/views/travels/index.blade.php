@@ -2,7 +2,28 @@
 
 @section('contents')
 
-    
+@if (session('delete_success'))
+        @php
+            $travel = session('delete_success')
+        @endphp
+        <div class="alert alert-danger">
+            "{{ $travel->title }}" has been deleted!!
+            <form action="{{ route("travels.restore", ['travel' => $travel] )}}" method="post">
+                @csrf
+                <button class="btn btn-warning">Restore</button>
+            </form>
+        </div>
+    @endif
+
+    @if (session('restore_success'))
+        @php
+            $travel = session('restore_success')
+        @endphp
+        <div class="alert alert-success">
+            "{{ $travel->title }}" has been restored!!
+            
+        </div>
+    @endif
 
 <div class="container">
     <div class="row row-cols-3">
@@ -22,11 +43,11 @@
                     <div class="card-body">
                         <a href="{{ route('travels.show', ['travel' => $travel->id]) }}" class="btn btn-primary">Travel info</a>
                         <a href="{{ route('travels.edit', ['travel' => $travel->id]) }}" class="btn btn-warning">Edit travel</a>
-                        {{-- <form action="{{ route('travels.destroy', ['travel' => $travel->id]) }}" method="POST" class="d-inline-block">
+                        <form action="{{ route('travels.destroy', ['travel' => $travel->id]) }}" method="POST" class="d-inline-block">
                             @csrf
                             @method('delete')
                             <button class="btn btn-danger" href="">Delete</button>
-                        </form> --}}
+                        </form>
                     </div>
                 </div>
             </div>
