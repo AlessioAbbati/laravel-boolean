@@ -8,6 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Travel extends Model
 {
     use HasFactory;
+<<<<<<< HEAD
     public $timestamps = false;
     protected $table = 'travels';
 }
+=======
+    protected $fillable = ["date", "title", "text", "image", "country", "city"];
+}
+>>>>>>> origin/CRUD_2_nicola

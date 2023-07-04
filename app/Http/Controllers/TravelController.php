@@ -7,6 +7,15 @@ use Illuminate\Http\Request;
 
 class TravelController extends Controller
 {
+
+    private $validations = [
+        "date"          => "required|date",
+        "title"         => "required|string|max:50",
+        "text"          => "required|string",
+        "image"         => "required|string",
+        "country"       => "required|string|max:25",
+        "city"          => "required|string|max:50",
+    ];
     /**
      * Display a listing of the resource.
      *
@@ -38,7 +47,20 @@ class TravelController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate($this->validations);
         
+        $data = $request->all();
+
+        $newTravel = new Travel();
+        $newTravel->date = $data["date"];
+        $newTravel->title = $data["title"];
+        $newTravel->text = $data["text"];
+        $newTravel->image = $data["image"];
+        $newTravel->country = $data["country"];
+        $newTravel->save();
+
+
+        return redirect()->route("travel.show", ["travel" =>$newTravel->id]);
     }
 
     /**
@@ -47,9 +69,9 @@ class TravelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Travel $travel)
     {
-        //
+        return view("travel.show", compact("travel"));
     }
 
     /**
@@ -58,9 +80,9 @@ class TravelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Travel $travel)
     {
-        //
+        return view("travel.edit", compact("travel"));
     }
 
     /**
@@ -70,9 +92,22 @@ class TravelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Travel $travel)
     {
-        //
+        $request->validate($this->validations);
+
+        $data = $request->all();
+
+        // aggiornare i dati nel db
+        $comic->date            = $data["date"];
+        $comic->title           = $data["title"];
+        $comic->text            = $data["text"];
+        $comic->image           = $data["image"];
+        $comic->country         = $data["country"];
+        $comic->update();
+
+        // altro metodo per fare il redirect
+        return to_route("travels.show", ["travel" => $travel->id]);
     }
 
     /**
