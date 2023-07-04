@@ -23,14 +23,14 @@
             "{{ $travel->title }}" has been restored!!
             
         </div>
-    @endif
+    @endif    
 
 <div class="container">
     <div class="row row-cols-3">
         @foreach ($travels as $travel)
             <div class="col mb-3">
                 <div class="card h-100">
-                    <img src="{{ $travel->image }}" class="card-img-top" alt="...">
+                    <img style="height: 275px" src="{{ $travel->image }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{ $travel->title }}</h5>
                     </div>
@@ -43,11 +43,11 @@
                     <div class="card-body">
                         <a href="{{ route('travels.show', ['travel' => $travel->id]) }}" class="btn btn-primary">Travel info</a>
                         <a href="{{ route('travels.edit', ['travel' => $travel->id]) }}" class="btn btn-warning">Edit travel</a>
-                        <form action="{{ route('travels.destroy', ['travel' => $travel->id]) }}" method="POST" class="d-inline-block">
+                        {{-- <form action="{{ route('travels.destroy', ['travel' => $travel->id]) }}" method="POST" class="d-inline-block">
                             @csrf
                             @method('delete')
                             <button class="btn btn-danger" href="">Delete</button>
-                        </form>
+                        </form> --}}
                     </div>
                 </div>
             </div>
