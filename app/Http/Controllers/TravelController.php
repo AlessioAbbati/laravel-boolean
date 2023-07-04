@@ -38,7 +38,28 @@ class TravelController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'date'          => 'required',
+            'title'         => 'string|required',
+            'text'          => 'string|required',
+            'image'         => 'required',
+            'country'       => 'string|required',
+            'city'          => 'string|required',
+        ]);
+
         
+        $data       = $request->all();
+        $newTravel  = new Travel();
+
+        $newTravel->date            = $data['date'];
+        $newTravel->title           = $data['title'];
+        $newTravel->text            = $data['text'];
+        $newTravel->image           = $data['image'];
+        $newTravel->country         = $data['country'];
+        $newTravel->city            = $data['city'];
+        $newTravel->save();
+
+        return redirect()->route('travels.index');
     }
 
     /**
