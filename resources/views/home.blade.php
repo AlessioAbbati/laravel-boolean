@@ -2,8 +2,6 @@
 
 @section('contents')
     <div class="container">
-      
-      <h2 class="text-center">I miei viaggi</h2>
 
       <div id="carouselExampleIndicators" class="carousel slide">
         <div class="carousel-indicators">
@@ -15,6 +13,9 @@
           @foreach ($travels as $key => $travel)
             <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
               <img src="{{ $travel->image }}" class="d-block w-100" alt="Slide {{ $key+1 }}">
+              <div class="carousel-caption">
+                <h5>{{ $travel->title }}</h5>
+              </div>
             </div>
           @endforeach
         </div>
