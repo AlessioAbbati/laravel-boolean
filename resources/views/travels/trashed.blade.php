@@ -9,7 +9,7 @@
         @foreach ($trashedTravels as $travel)
             <div class="col mb-3">
                 <div class="card h-100">
-                    <img src="{{ $travel->image }}" class="card-img-top" alt="...">
+                    <img style="height: 275px" src="{{ $travel->image }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{ $travel->title }}</h5>
                     </div>
