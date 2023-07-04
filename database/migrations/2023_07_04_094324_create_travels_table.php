@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('travels', function (Blueprint $table) {
             $table->id();
+            $table->softDeletes();
             // $table->timestamps();
 
             $table->date('date');           // Il ricordo testuale dell'Esperienza
