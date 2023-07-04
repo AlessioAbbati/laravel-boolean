@@ -28,7 +28,7 @@
                 <li class="list-unstyled">Weekend</li>
             </ul>
             <ul> TEAM
-                <li class=" mt-2 list-unstyled"> <a href="" class="text-light text-decoration-none">Lamberto Neri</a></li>
+                <li class=" mt-2 list-unstyled"> <a href="{{ route('members.index') }}" class="text-light text-decoration-none">Lamberto Neri</a></li>
                 <li class="list-unstyled"> <a href="" class="text-light text-decoration-none">Felice D'Arcangelo</a></li>
                 <li class="list-unstyled"> <a href="" class="text-light text-decoration-none">Alessio Abbati</a></li>
                 <li class="list-unstyled"> <a href="" class="text-light text-decoration-none">Giulio D'Angelo</a></li>
