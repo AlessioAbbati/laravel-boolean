@@ -1,7 +1,9 @@
 @extends('layouts.base')
 
 @section('contents')
-    <div class="container">
+
+
+      
 
       <div id="carouselExampleIndicators" class="carousel slide">
         <div class="carousel-indicators">
