@@ -148,4 +148,10 @@ class TravelController extends Controller
         return to_route('travels.trashed')->with('delete_success', $travel);
     
     }
+
+    public function home()
+    {
+        $travels = Travel::all();
+        return view('home',compact('travels'));
+    }
 }
