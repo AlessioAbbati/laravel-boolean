@@ -47,20 +47,7 @@ class TravelController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate($this->validations);
         
-        $data = $request->all();
-
-        $newTravel = new Travel();
-        $newTravel->date = $data["date"];
-        $newTravel->title = $data["title"];
-        $newTravel->text = $data["text"];
-        $newTravel->image = $data["image"];
-        $newTravel->country = $data["country"];
-        $newTravel->save();
-
-
-        return redirect()->route("travel.show", ["travel" =>$newTravel->id]);
     }
 
     /**
@@ -71,7 +58,7 @@ class TravelController extends Controller
      */
     public function show(Travel $travel)
     {
-        return view("travel.show", compact("travel"));
+        return view("travels.show", compact("travel"));
     }
 
     /**
@@ -82,7 +69,7 @@ class TravelController extends Controller
      */
     public function edit(Travel $travel)
     {
-        return view("travel.edit", compact("travel"));
+        return view("travels.edit", compact("travel"));
     }
 
     /**
