@@ -116,9 +116,19 @@ class TravelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Travel $travel)
     {
-        //
+        $travel->delete();
+        return to_route('travels.index')->with('delete_success', $travel);
+    }
+
+    public function restore($id)
+    {
+        Travel::withTrashed()->where('id', $id)->restore();
+
+        $travel = Travel::find($id);
+
+        return to_route('travels.index')->with('restore_success', $travel);
     }
 
     public function trashed()
@@ -128,5 +138,14 @@ class TravelController extends Controller
         
 
         return view('travels.trashed', compact('trashedTravels'));
+    }
+
+    public function hardDelete($id)
+    {
+        $travel = Travel::withTrashed()->find($id);
+        $travel->forceDelete();
+
+        return to_route('travels.trashed')->with('delete_success', $travel);
+    
     }
 }
