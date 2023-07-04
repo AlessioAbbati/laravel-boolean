@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Travel extends Model
 {
     use HasFactory;
+    protected $fillable = ["date", "title", "text", "image", "country", "city"];
 }
